@@ -1,4 +1,3 @@
-
 {
 
 open Stdarg
@@ -9,12 +8,13 @@ DECLARE PLUGIN "derive_plugin"
 
 {
 
-let classify_derive_command _ = Vernacextend.(VtStartProof (Doesn'tGuaranteeOpacity,[]),VtLater)
+let classify_quickchick_command _ = Vernacextend.VtQuery
+
+let run () = print_endline "QuickChick"
 
 }
 
-VERNAC COMMAND EXTEND Derive CLASSIFIED BY { classify_derive_command }
-| ![ proof ] [ "Derive" ident(f) "SuchThat" constr(suchthat) "As" ident(lemma) ] ->
-  { fun ~pstate -> None } 
+VERNAC COMMAND EXTEND QuickChick CLASSIFIED BY { classify_quickchick_command }
+| [ "QuickChick" ] ->
+  { run () }
 END
-
