@@ -1,0 +1,10 @@
+(library
+ (name show_lib)
+ (public_name quickchick.show_lib)
+ (modules :standard)
+)
+
+(coqlib
+ (name Show)
+ (public_name quickchick.show)
+ (libraries show_lib))
