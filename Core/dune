@@ -1,16 +1,16 @@
 (library
- (name core_lib)
- (public_name quickchick.core_lib)
+ (name core_plugin)
+ (public_name quickchick.core_plugin)
  (modules :standard)
- (libraries show_lib coq.plugins.extraction)
+ (libraries show_lib coq.plugins.ltac coq.plugins.extraction)
 )
 
 (rule
- (targets quickChick.ml)
- (deps (:pp-file quickChick.mlg))
+ (targets g_quickchick.ml)
+ (deps (:pp-file g_quickchick.mlg))
  (action (run coqpp %{pp-file})))
 
 (coqlib
  (name Core)
  (public_name quickchick.Core)
- (libraries core_lib))
+ (libraries core_plugin))
