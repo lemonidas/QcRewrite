@@ -1,14 +1,12 @@
 {
 
-open Stdarg
-
 }
 
 DECLARE PLUGIN "derive_plugin"
 
 {
 
-let classify_quickchick_command _ = Vernacextend.VtQuery
+let classify_quickchick_command _ = Vernacextend.(VtQuery, VtNow)
 
 let run () = print_endline "QuickChick"
 
